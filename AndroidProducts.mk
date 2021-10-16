@@ -16,6 +16,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_barbet.mk \
+    $(LOCAL_DIR)/carbon_barbet.mk \
 
 COMMON_LUNCH_CHOICES := \
     aosp_barbet-userdebug \
+    carbon_barbet-userdebug \

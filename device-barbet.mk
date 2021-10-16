@@ -16,23 +16,13 @@
 
 PRODUCT_HARDWARE := barbet
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-        LOCAL_KERNEL := device/google/barbet-kernel/Image.lz4
-    else
-        LOCAL_KERNEL := device/google/barbet-kernel/vintf/Image.lz4
-    endif
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_VENDOR_KERNEL_HEADERS := device/google/barbet-kernel/sm7250/kernel-headers
-
 DEVICE_PACKAGE_OVERLAYS += device/google/barbet/barbet/overlay
 
 PRODUCT_DEVICE_SVN_OVERRIDE := true
 
 include build/make/target/product/iorap_large_memory_config.mk
+
+BOOT_KERNEL_MODULES += ftm5.ko
 include device/google/redbull/device-common.mk
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -103,10 +93,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/tas2562/PinkNoise_m22db_RmsPow.wav:$(TARGET_COPY_OUT_VENDOR)/etc/PinkNoise_m22db_RmsPow.wav \
     $(LOCAL_PATH)/audio/tas2562/Silence.wav:$(TARGET_COPY_OUT_VENDOR)/etc/Silence.wav \
     $(LOCAL_PATH)/audio/tas2562/TAS_FactoryApp:$(TARGET_COPY_OUT_VENDOR)/bin/TAS_FactoryApp
-endif
-
-ifeq ($(wildcard vendor/google_devices/barbet/proprietary/device-vendor-barbet.mk),)
-    BUILD_WITHOUT_VENDOR := true
 endif
 
 PRODUCT_PACKAGES += \

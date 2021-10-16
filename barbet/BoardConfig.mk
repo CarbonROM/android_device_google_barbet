@@ -21,6 +21,8 @@ USES_DEVICE_GOOGLE_BARBET := true
 
 include device/google/redbull/BoardConfig-common.mk
 
+TARGET_KERNEL_VARIANT_CONFIG := barbet_defconfig
+
 # Allow LZ4 compression
 BOARD_RAMDISK_USE_LZ4 := true
 
