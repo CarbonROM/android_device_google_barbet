@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "CarbonROM/android_device_google_redbull",
+    "target_path": "device/google/redbull"
+  },
+  {
+    "repository": "TheMuppets/proprietary_vendor_google",
+    "target_path": "vendor/google",
+    "remote": "gh",
+    "revision": "lineage-19.0"
+  }
+]
