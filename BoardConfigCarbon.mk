@@ -15,4 +15,8 @@
 #
 
 # Boardconfig for carbon_barbet
+
+# Add before redbull BoardConfigCarbon.mk
+BOOT_KERNEL_MODULES += ftm5.ko
+
 -include device/google/redbull/BoardConfigCarbon.mk
