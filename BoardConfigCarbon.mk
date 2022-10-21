@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Add before redbull BoardConfigLineage.mk
+# Add before redbull BoardConfigCarbon.mk
 BOOT_KERNEL_MODULES += ftm5.ko
 
-include device/google/redbull/BoardConfigLineage.mk
+include device/google/redbull/BoardConfigCarbon.mk
 
 include vendor/google/barbet/BoardConfigVendor.mk

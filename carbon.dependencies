@@ -1,0 +1,7 @@
+[
+  {
+    "repository": "CarbonROM/android_device_google_redbull",
+    "target_path": "device/google/redbull",
+    "remote": "carbon"
+  }
+]
